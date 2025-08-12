@@ -16,4 +16,15 @@ For example, if you wanted to call `https://example.org` and provide the `User-A
 
 Again, I wish I didn't have to make this, but I do. Do with it what you want. If you have some features you want added, make a PR or file an issue.
 
-If you want to run this, I recommend using Docker. The latest version should be published on Github.
+## Running the Proxy
+
+If you want to run this, I recommend using Docker. The latest version should be published on Github at `ghcr.io/arthurlockman/useragentproxy:main`. A very simple Docker Compose project can be set up like this:
+
+```yaml
+services:
+  useragentproxy:
+    image: ghcr.io/arthurlockman/useragentproxy:main
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+```
